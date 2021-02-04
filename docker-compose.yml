@@ -3,5 +3,8 @@ services:
   node:
     image: "node:15.8-buster"
     volumes:
-      - ".:/opt/next"
+      - ".:/opt/nextjs-blog"
     tty: true
+    command: ["bash", "-c", "cd /opt/nextjs-blog && npm run dev"]
+    ports:
+      - "3000:3000"
